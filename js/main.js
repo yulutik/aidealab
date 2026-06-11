@@ -138,4 +138,26 @@
   if (savedLang === "en" || savedLang === "ru") {
     applyLanguage(savedLang);
   }
+
+  /* Portfolio: play preview video on hover/focus, otherwise show poster */
+  document.querySelectorAll(".portfolio-item").forEach(function (item) {
+    var video = item.querySelector(".portfolio-item__video");
+    if (!video) {
+      return;
+    }
+
+    var play = function () {
+      video.play();
+    };
+
+    var stop = function () {
+      video.pause();
+      video.currentTime = 0;
+    };
+
+    item.addEventListener("mouseenter", play);
+    item.addEventListener("mouseleave", stop);
+    item.addEventListener("focus", play);
+    item.addEventListener("blur", stop);
+  });
 })();
