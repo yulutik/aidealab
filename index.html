@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aidea lab — AI Video Creator | Юлия Колесникова</title>
+  <meta name="description" content="aidea lab — AI video creator Юлия Колесникова. Концепты и креативы под ДНК вашего бренда: видео для fashion, beauty и lifestyle.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n="skip.link">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="#top">aidea lab</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#about" data-i18n="nav.about">Обо мне</a>
+        <a href="#portfolio" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language switch / Переключатель языка">
+        <button type="button" class="lang-switch__btn is-active" data-lang="ru" aria-pressed="true">RU</button>
+        <span class="lang-switch__divider" aria-hidden="true">/</span>
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="overline" data-i18n="hero.overline">AI VIDEO CREATOR</p>
+          <h1 class="hero__name" data-i18n="hero.name">Юлия Колесникова</h1>
+          <p class="hero__tagline" data-i18n="hero.tagline">Концепты и креативы под ДНК вашего бренда</p>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">Создаю атмосферные AI-видео для fashion- и luxury-брендов — там, где образ и вкус считываются за секунды.</p>
+          <a class="btn btn--primary" href="#contact" data-i18n="hero.cta">Обсудить проект</a>
+        </div>
+        <div class="hero__media">
+          <img src="assets/images/portrait.svg" alt="" data-i18n-attr="alt:hero.portraitAlt" width="600" height="800" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+        <div class="about__media">
+          <img src="assets/images/about.svg" alt="" data-i18n-attr="alt:about.imageAlt" width="800" height="1000" loading="lazy">
+        </div>
+        <div class="about__content">
+          <p class="overline" data-i18n="about.overline">Обо мне</p>
+          <h2 class="section-heading" data-i18n="about.heading">Фотография, прожитая через AI</h2>
+          <p data-i18n="about.p1">Больше десяти лет я работаю с фотографией: снимаю кампании, лукбуки и истории для fashion- и beauty-брендов — учусь видеть свет, кадр и настроение.</p>
+          <p data-i18n="about.p2">Сегодня это чувство визуального языка я перевожу в AI-видео. Я дипломированный промпт-инженер и создаю ролики, которые продолжают эстетику бренда и говорят на одном языке с его аудиторией.</p>
+          <p data-i18n="about.p3">Я продаю не технологию, а образ. Я думаю концептами — от настроения и референсов до готового ролика.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="portfolio__header">
+          <p class="overline" data-i18n="portfolio.overline">Работы</p>
+          <h2 class="section-heading" data-i18n="portfolio.heading">Портфолио</h2>
+          <p class="portfolio__intro" data-i18n="portfolio.intro">Превью без звука — нажмите на ролик, чтобы посмотреть его целиком.</p>
+          <div class="portfolio__tags">
+            <span class="tag" data-i18n="portfolio.tagFashion">Fashion</span>
+            <span class="tag" data-i18n="portfolio.tagBeauty">Beauty</span>
+            <!-- Следующая итерация: добавить категорию Food, когда появятся работы -->
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <!-- Row 1 — vertical 9:16 -->
+          <a class="portfolio-item portfolio-item--vertical" href="assets/video/fashion-1-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item1Aria">
+            <video class="portfolio-item__video" poster="assets/video/poster-vertical-1.svg" autoplay loop muted playsinline preload="metadata">
+              <source src="assets/video/fashion-1.mp4" type="video/mp4">
+            </video>
+          </a>
+
+          <a class="portfolio-item portfolio-item--vertical" href="assets/video/beauty-1-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item2Aria">
+            <video class="portfolio-item__video" poster="assets/video/poster-vertical-2.svg" autoplay loop muted playsinline preload="metadata">
+              <source src="assets/video/beauty-1.mp4" type="video/mp4">
+            </video>
+          </a>
+
+          <!-- Row 2 — horizontal 16:9 -->
+          <a class="portfolio-item portfolio-item--horizontal" href="assets/video/fashion-2-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item3Aria">
+            <video class="portfolio-item__video" poster="assets/video/poster-horizontal-1.svg" autoplay loop muted playsinline preload="metadata">
+              <source src="assets/video/fashion-2.mp4" type="video/mp4">
+            </video>
+          </a>
+
+          <a class="portfolio-item portfolio-item--horizontal" href="assets/video/beauty-2-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item4Aria">
+            <video class="portfolio-item__video" poster="assets/video/poster-horizontal-2.svg" autoplay loop muted playsinline preload="metadata">
+              <source src="assets/video/beauty-2.mp4" type="video/mp4">
+            </video>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA strip -->
+    <section class="cta-strip">
+      <div class="container cta-strip__inner">
+        <h2 class="cta-strip__heading" data-i18n="cta.heading">Готовы создать видео, в которое влюбится ваша аудитория?</h2>
+        <a class="btn btn--inverse" href="#contact" data-i18n="cta.button">Обсудить проект</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer / contacts -->
+  <footer class="site-footer" id="contact">
+    <div class="container site-footer__inner">
+      <p class="overline" data-i18n="footer.overline">Связь</p>
+      <h2 class="section-heading" data-i18n="footer.heading">Обсудим проект?</h2>
+
+      <div class="site-footer__links">
+        <!-- TODO: заменить на реальные ссылки -->
+        <a href="https://t.me/aidea__lab" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com/aidea__lab" target="_blank" rel="noopener">Instagram <span aria-hidden="true">@aidea__lab</span></a>
+        <a href="mailto:hello@aidea-lab.studio">hello@aidea-lab.studio</a>
+      </div>
+
+      <p class="site-footer__note" data-i18n="footer.note">* Instagram — продукт компании Meta, признанной экстремистской организацией, деятельность которой запрещена на территории РФ.</p>
+
+      <p class="site-footer__copyright" data-i18n="footer.copyright">© 2026 aidea lab. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
