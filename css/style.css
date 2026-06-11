@@ -435,12 +435,6 @@ button:focus-visible {
   margin-bottom: 0;
 }
 
-.portfolio__intro {
-  margin-top: 1rem;
-  color: var(--color-ink-soft);
-  font-size: 1rem;
-}
-
 .portfolio__tags {
   display: flex;
   gap: 0.75rem;
