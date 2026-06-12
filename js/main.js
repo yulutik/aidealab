@@ -214,36 +214,4 @@
       }
     });
   });
-
-  /* Portfolio: warm up the browser cache for the full video as soon as
-     an item scrolls into view, so it starts near-instantly on tap */
-  if ("IntersectionObserver" in window) {
-    var prefetchObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) {
-          return;
-        }
-        var item = entry.target;
-        observer.unobserve(item);
-
-        var src = getFullVideoSrc(item);
-        if (!src) {
-          return;
-        }
-
-        var preloadVideo = document.createElement("video");
-        preloadVideo.preload = "auto";
-        preloadVideo.muted = true;
-        preloadVideo.setAttribute("playsinline", "");
-        preloadVideo.style.display = "none";
-        preloadVideo.src = src;
-        document.body.appendChild(preloadVideo);
-        preloadVideo.load();
-      });
-    }, { rootMargin: "200px" });
-
-    document.querySelectorAll(".portfolio-item").forEach(function (item) {
-      prefetchObserver.observe(item);
-    });
-  }
 })();
