@@ -27,10 +27,11 @@
       "portfolio.heading": "Портфолио",
       "portfolio.tagFashion": "Fashion",
       "portfolio.tagBeauty": "Beauty",
-      "portfolio.item1Aria": "Открыть видео Fashion в новой вкладке",
-      "portfolio.item2Aria": "Открыть видео Beauty в новой вкладке",
-      "portfolio.item3Aria": "Открыть видео Fashion в новой вкладке",
-      "portfolio.item4Aria": "Открыть видео Beauty в новой вкладке",
+      "portfolio.item1Aria": "Открыть видео Fashion",
+      "portfolio.item2Aria": "Открыть видео Beauty",
+      "portfolio.item3Aria": "Открыть видео Fashion",
+      "portfolio.item4Aria": "Открыть видео Beauty",
+      "portfolio.modalClose": "Закрыть видео",
 
       "cta.heading": "Расскажите о своей идее",
       "cta.button": "Обсудить проект",
@@ -63,10 +64,11 @@
       "portfolio.heading": "Portfolio",
       "portfolio.tagFashion": "Fashion",
       "portfolio.tagBeauty": "Beauty",
-      "portfolio.item1Aria": "Open Fashion video in a new tab",
-      "portfolio.item2Aria": "Open Beauty video in a new tab",
-      "portfolio.item3Aria": "Open Fashion video in a new tab",
-      "portfolio.item4Aria": "Open Beauty video in a new tab",
+      "portfolio.item1Aria": "Open Fashion video",
+      "portfolio.item2Aria": "Open Beauty video",
+      "portfolio.item3Aria": "Open Fashion video",
+      "portfolio.item4Aria": "Open Beauty video",
+      "portfolio.modalClose": "Close video",
 
       "cta.heading": "Tell me about your idea",
       "cta.button": "Let's talk",
@@ -159,5 +161,51 @@
     item.addEventListener("mouseleave", stop);
     item.addEventListener("focus", play);
     item.addEventListener("blur", stop);
+  });
+
+  /* Portfolio: open full video in an in-page modal */
+  var modal = document.getElementById("video-modal");
+  var modalVideo = modal.querySelector(".video-modal__video");
+
+  var openModal = function (src) {
+    modal.hidden = false;
+    modal.classList.remove("is-loaded");
+    document.body.classList.add("has-modal-open");
+    modalVideo.src = src;
+    modalVideo.load();
+    modalVideo.play().catch(function () {
+      /* autoplay may be blocked — user can press play in the controls */
+    });
+  };
+
+  var closeModal = function () {
+    modal.hidden = true;
+    document.body.classList.remove("has-modal-open");
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+    modalVideo.load();
+  };
+
+  modalVideo.addEventListener("canplay", function () {
+    modal.classList.add("is-loaded");
+  });
+
+  modal.querySelectorAll("[data-modal-dismiss]").forEach(function (el) {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+
+  document.querySelectorAll(".portfolio-item").forEach(function (item) {
+    item.addEventListener("click", function () {
+      var src = item.getAttribute("data-video-src");
+      if (src) {
+        openModal(src);
+      }
+    });
   });
 })();

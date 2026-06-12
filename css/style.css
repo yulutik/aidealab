@@ -492,10 +492,16 @@ button:focus-visible {
 .portfolio-item {
   position: relative;
   display: block;
+  width: 100%;
   overflow: hidden;
+  border: 0;
   border-radius: 0.5rem;
+  margin: 0;
+  padding: 0;
   background-color: var(--color-lilac-soft);
+  font: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .portfolio-item__video {
@@ -757,4 +763,96 @@ button:focus-visible {
 .error-page__home:hover {
   color: var(--color-ink);
   border-color: var(--color-line);
+}
+
+/* ---------------------------------------------------------
+   Portfolio video modal
+   --------------------------------------------------------- */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.video-modal[hidden] {
+  display: none;
+}
+
+.video-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(33, 31, 35, 0.85);
+}
+
+.video-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+}
+
+.video-modal__video {
+  display: block;
+  width: 100%;
+  max-height: 85vh;
+  border-radius: 0.5rem;
+  background-color: var(--color-dark);
+}
+
+.video-modal__close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-dark-text);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.video-modal__close:hover {
+  background-color: rgba(245, 242, 238, 0.12);
+}
+
+.video-modal__spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.video-modal__spinner::after {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid rgba(245, 242, 238, 0.25);
+  border-top-color: var(--color-dark-text);
+  border-radius: 50%;
+  animation: video-modal-spin 0.8s linear infinite;
+}
+
+.video-modal.is-loaded .video-modal__spinner {
+  display: none;
+}
+
+@keyframes video-modal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body.has-modal-open {
+  overflow: hidden;
 }

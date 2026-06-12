@@ -88,7 +88,7 @@
         <div class="portfolio-grid">
 
           <!-- Row 1 — vertical 9:16 -->
-          <a class="portfolio-item portfolio-item--vertical" href="assets/video/fashion-1-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item1Aria">
+          <button type="button" class="portfolio-item portfolio-item--vertical" data-video-src="assets/video/fashion-1-full.mp4" data-i18n-attr="aria-label:portfolio.item1Aria">
             <video class="portfolio-item__video" loop muted playsinline preload="metadata">
               <source src="assets/video/fashion-1.mp4" type="video/mp4">
             </video>
@@ -99,9 +99,9 @@
                 <path d="M26 21.5 44 32 26 42.5Z" fill="white" fill-opacity="0.85"/>
               </svg>
             </span>
-          </a>
+          </button>
 
-          <a class="portfolio-item portfolio-item--vertical" href="assets/video/beauty-1-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item2Aria">
+          <button type="button" class="portfolio-item portfolio-item--vertical" data-video-src="assets/video/beauty-1-full.mp4" data-i18n-attr="aria-label:portfolio.item2Aria">
             <video class="portfolio-item__video" loop muted playsinline preload="metadata">
               <source src="assets/video/beauty-1.mp4" type="video/mp4">
             </video>
@@ -112,10 +112,10 @@
                 <path d="M26 21.5 44 32 26 42.5Z" fill="white" fill-opacity="0.85"/>
               </svg>
             </span>
-          </a>
+          </button>
 
           <!-- Row 2 — horizontal 16:9 -->
-          <a class="portfolio-item portfolio-item--horizontal" href="assets/video/fashion-2-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item3Aria">
+          <button type="button" class="portfolio-item portfolio-item--horizontal" data-video-src="assets/video/fashion-2-full.mp4" data-i18n-attr="aria-label:portfolio.item3Aria">
             <video class="portfolio-item__video" loop muted playsinline preload="metadata">
               <source src="assets/video/fashion-2.mp4" type="video/mp4">
             </video>
@@ -126,9 +126,9 @@
                 <path d="M26 21.5 44 32 26 42.5Z" fill="white" fill-opacity="0.85"/>
               </svg>
             </span>
-          </a>
+          </button>
 
-          <a class="portfolio-item portfolio-item--horizontal" href="assets/video/beauty-2-full.mp4" target="_blank" rel="noopener" data-i18n-attr="aria-label:portfolio.item4Aria">
+          <button type="button" class="portfolio-item portfolio-item--horizontal" data-video-src="assets/video/beauty-2-full.mp4" data-i18n-attr="aria-label:portfolio.item4Aria">
             <video class="portfolio-item__video" loop muted playsinline preload="metadata">
               <source src="assets/video/beauty-2.mp4" type="video/mp4">
             </video>
@@ -139,7 +139,7 @@
                 <path d="M26 21.5 44 32 26 42.5Z" fill="white" fill-opacity="0.85"/>
               </svg>
             </span>
-          </a>
+          </button>
 
         </div>
       </div>
@@ -172,6 +172,20 @@
       <p class="site-footer__copyright" data-i18n="footer.copyright">© 2026 aidea lab. Все права защищены.</p>
     </div>
   </footer>
+
+  <!-- Portfolio video modal -->
+  <div class="video-modal" id="video-modal" hidden>
+    <div class="video-modal__backdrop" data-modal-dismiss></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true">
+      <button type="button" class="video-modal__close" data-modal-dismiss data-i18n-attr="aria-label:portfolio.modalClose">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 5 19 19M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="video-modal__spinner" aria-hidden="true"></div>
+      <video class="video-modal__video" controls playsinline preload="none"></video>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
