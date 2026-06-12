@@ -202,7 +202,9 @@
 
   document.querySelectorAll(".portfolio-item").forEach(function (item) {
     item.addEventListener("click", function () {
-      var src = item.getAttribute("data-video-src");
+      var isMobile = window.matchMedia("(max-width: 899px)").matches;
+      var mobileSrc = item.getAttribute("data-video-src-mobile");
+      var src = (isMobile && mobileSrc) ? mobileSrc : item.getAttribute("data-video-src");
       if (src) {
         openModal(src);
       }
