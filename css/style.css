@@ -351,7 +351,6 @@ button:focus-visible {
 }
 
 .hero__media {
-  order: -1;
   border: 1px solid var(--color-line);
   padding: clamp(0.4rem, 1.5vw, 0.75rem);
 }
@@ -365,12 +364,24 @@ button:focus-visible {
 @media (min-width: 900px) {
   .hero__inner {
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
+    grid-template-areas:
+      "overline media"
+      "content media";
+    column-gap: 4rem;
+    row-gap: clamp(0.75rem, 2vw, 1.25rem);
     align-items: stretch;
   }
 
+  .hero__overline {
+    grid-area: overline;
+  }
+
+  .hero__content {
+    grid-area: content;
+  }
+
   .hero__media {
-    order: 0;
+    grid-area: media;
   }
 
   .hero__media img {
