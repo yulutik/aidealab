@@ -33,6 +33,13 @@
       "portfolio.item4Aria": "Открыть видео Beauty",
       "portfolio.modalClose": "Закрыть видео",
 
+      "fashion.videoOverline": "Видео",
+      "fashion.photoOverline": "Фотосет",
+      "fashion.video1Aria": "Открыть видео Rick Owens",
+      "fashion.video2Aria": "Открыть видео Fashion",
+      "fashion.prevSlide": "Предыдущий",
+      "fashion.nextSlide": "Следующий",
+
       "cta.heading": "Расскажите о своей идее",
       "cta.button": "Обсудить проект",
 
@@ -70,6 +77,13 @@
       "portfolio.item4Aria": "Open Beauty video",
       "portfolio.modalClose": "Close video",
 
+      "fashion.videoOverline": "Video",
+      "fashion.photoOverline": "Photo set",
+      "fashion.video1Aria": "Open Rick Owens video",
+      "fashion.video2Aria": "Open Fashion video",
+      "fashion.prevSlide": "Previous",
+      "fashion.nextSlide": "Next",
+
       "cta.heading": "Tell me about your idea",
       "cta.button": "Let's talk",
 
@@ -81,8 +95,14 @@
   };
 
   var titles = {
-    ru: "aidea lab — AI Video Creator | Юлия Колесникова",
-    en: "aidea lab — AI Video Creator | Yulia Kolesnikova"
+    ru: {
+      main: "aidea lab — AI Video Creator | Юлия Колесникова",
+      fashion: "Fashion — aidea lab | Юлия Колесникова"
+    },
+    en: {
+      main: "aidea lab — AI Video Creator | Yulia Kolesnikova",
+      fashion: "Fashion — aidea lab | Yulia Kolesnikova"
+    }
   };
 
   function applyLanguage(lang) {
@@ -107,7 +127,8 @@
     });
 
     document.documentElement.lang = lang;
-    document.title = titles[lang];
+    var page = document.documentElement.getAttribute("data-page") || "main";
+    document.title = (titles[lang][page] || titles[lang].main);
 
     document.querySelectorAll("[data-lang]").forEach(function (btn) {
       var isActive = btn.getAttribute("data-lang") === lang;

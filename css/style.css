@@ -475,6 +475,14 @@ button:focus-visible {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+a.tag:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink-soft);
+  cursor: pointer;
 }
 
 .portfolio-grid {
@@ -856,4 +864,115 @@ button:focus-visible {
 
 body.has-modal-open {
   overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   Fashion page — sections
+   --------------------------------------------------------- */
+.fashion-section {
+  padding-block: var(--space-section);
+}
+
+.fashion-section:first-child {
+  padding-top: calc(var(--space-section) * 0.75);
+}
+
+.fashion-section + .fashion-section {
+  padding-top: 0;
+}
+
+/* ---------------------------------------------------------
+   Slider component
+   --------------------------------------------------------- */
+.slider {
+  position: relative;
+}
+
+.slider__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+}
+
+.slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider__item {
+  flex: 0 0 calc((100% - 1.25rem) / 2);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 600px) {
+  .slider__track {
+    gap: 2rem;
+  }
+
+  .slider__item {
+    flex: 0 0 calc((100% - 2rem) / 2);
+  }
+}
+
+@media (min-width: 900px) {
+  .slider__item {
+    flex: 0 0 calc((100% - 2 * 2rem) / 3);
+  }
+}
+
+/* override portfolio-item constraints inside slider */
+.slider .portfolio-item--vertical {
+  max-width: none;
+  margin-inline: 0;
+}
+
+.slider__nav {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .slider__nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.625rem;
+    margin-top: 1.25rem;
+  }
+}
+
+.slider__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background-color var(--transition), opacity var(--transition);
+}
+
+.slider__btn:hover {
+  background-color: var(--color-lilac-soft);
+}
+
+.slider__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ---------------------------------------------------------
+   Fashion page — photo carousel
+   --------------------------------------------------------- */
+.fashion-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }

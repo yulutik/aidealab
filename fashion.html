@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru" data-page="fashion">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion — aidea lab | Юлия Колесникова</title>
+  <meta name="description" content="Fashion AI-видео и фотосет — aidea lab, Юлия Колесникова. AI video creator.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n="skip.link">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html">aidea lab</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="index.html#about" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#portfolio" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language switch / Переключатель языка">
+        <button type="button" class="lang-switch__btn is-active" data-lang="ru" aria-pressed="true">RU</button>
+        <span class="lang-switch__divider" aria-hidden="true">/</span>
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Video section -->
+    <section class="fashion-section" id="fashion-videos">
+      <div class="container">
+        <p class="overline" data-i18n="fashion.videoOverline">Видео</p>
+
+        <div class="slider" data-slider="videos">
+          <div class="slider__track">
+
+            <!-- Video 1: Rick Owens -->
+            <button type="button"
+              class="portfolio-item portfolio-item--vertical slider__item"
+              data-video-src="assets/video/beauty-1-full.mp4"
+              data-video-src-mobile="assets/video/beauty-1-full-mobile.mp4"
+              data-i18n-attr="aria-label:fashion.video1Aria">
+              <video class="portfolio-item__video" loop muted playsinline preload="metadata">
+                <source src="assets/video/beauty-1.mp4" type="video/mp4">
+              </video>
+              <img class="portfolio-item__poster" src="assets/video/poster-vertical-2.jpg" alt="" loading="eager">
+              <span class="portfolio-item__play" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="31" stroke="white" stroke-opacity="0.7" stroke-width="1.5"/>
+                  <path d="M26 21.5 44 32 26 42.5Z" fill="white" fill-opacity="0.85"/>
+                </svg>
+              </span>
+            </button>
+
+            <!-- Video 2: fashion-3 -->
+            <button type="button"
+              class="portfolio-item portfolio-item--vertical slider__item"
+              data-video-src="assets/video/fashion-3-full.mp4"
+              data-video-src-mobile="assets/video/fashion-3-full-mobile.mp4"
+              data-i18n-attr="aria-label:fashion.video2Aria">
+              <video class="portfolio-item__video" loop muted playsinline preload="metadata">
+                <source src="assets/video/fashion-3.mp4" type="video/mp4">
+              </video>
+              <img class="portfolio-item__poster" src="assets/video/poster-vertical-3.jpg" alt="" loading="eager">
+              <span class="portfolio-item__play" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="31" stroke="white" stroke-opacity="0.7" stroke-width="1.5"/>
+                  <path d="M26 21.5 44 32 26 42.5Z" fill="white" fill-opacity="0.85"/>
+                </svg>
+              </span>
+            </button>
+
+          </div>
+
+          <div class="slider__nav">
+            <button type="button" class="slider__btn slider__btn--prev" data-i18n-attr="aria-label:fashion.prevSlide" aria-label="Предыдущий">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button type="button" class="slider__btn slider__btn--next" data-i18n-attr="aria-label:fashion.nextSlide" aria-label="Следующий">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo section -->
+    <section class="fashion-section" id="fashion-photos">
+      <div class="container">
+        <p class="overline" data-i18n="fashion.photoOverline">Фотосет</p>
+
+        <div class="slider" data-slider="photos">
+          <div class="slider__track">
+
+            <div class="slider__item">
+              <img src="assets/images/fashion-photo-1.jpg" alt="" class="fashion-photo" loading="eager">
+            </div>
+            <div class="slider__item">
+              <img src="assets/images/fashion-photo-2.jpg" alt="" class="fashion-photo" loading="lazy">
+            </div>
+            <div class="slider__item">
+              <img src="assets/images/fashion-photo-3.jpg" alt="" class="fashion-photo" loading="lazy">
+            </div>
+            <div class="slider__item">
+              <img src="assets/images/fashion-photo-4.jpg" alt="" class="fashion-photo" loading="lazy">
+            </div>
+            <div class="slider__item">
+              <img src="assets/images/fashion-photo-5.jpg" alt="" class="fashion-photo" loading="lazy">
+            </div>
+            <div class="slider__item">
+              <img src="assets/images/fashion-photo-6.jpg" alt="" class="fashion-photo" loading="lazy">
+            </div>
+
+          </div>
+
+          <div class="slider__nav">
+            <button type="button" class="slider__btn slider__btn--prev" data-i18n-attr="aria-label:fashion.prevSlide" aria-label="Предыдущий">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button type="button" class="slider__btn slider__btn--next" data-i18n-attr="aria-label:fashion.nextSlide" aria-label="Следующий">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA strip -->
+    <section class="cta-strip">
+      <div class="container cta-strip__inner">
+        <h2 class="cta-strip__heading" data-i18n="cta.heading">Расскажите о своей идее</h2>
+        <a class="btn btn--inverse" href="https://t.me/yulutik" target="_blank" rel="noopener" data-i18n="cta.button">Обсудить проект</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container site-footer__inner">
+      <p class="overline" data-i18n="footer.overline">Контакты</p>
+      <h2 class="section-heading" data-i18n="footer.heading">Открыта к сотрудничеству</h2>
+
+      <div class="site-footer__links">
+        <a href="https://t.me/yulutik" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com/aidea__lab" target="_blank" rel="noopener">Instagram *</a>
+        <a href="mailto:malina611@gmail.com">malina611@gmail.com</a>
+      </div>
+
+      <p class="site-footer__note" data-i18n="footer.note">* Instagram — продукт компании Meta, признанной экстремистской организацией, деятельность которой запрещена на территории РФ.</p>
+
+      <p class="site-footer__copyright" data-i18n="footer.copyright">© 2026 aidea lab. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Portfolio video modal -->
+  <div class="video-modal" id="video-modal" hidden>
+    <div class="video-modal__backdrop" data-modal-dismiss></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true">
+      <button type="button" class="video-modal__close" data-modal-dismiss data-i18n-attr="aria-label:portfolio.modalClose">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 5 19 19M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="video-modal__spinner" aria-hidden="true"></div>
+      <video class="video-modal__video" controls playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/fashion.js"></script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109811397', 'ym');
+      ym(109811397, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109811397" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
