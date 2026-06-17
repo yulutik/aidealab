@@ -479,9 +479,14 @@ button:focus-visible {
   transition: border-color var(--transition), color var(--transition);
 }
 
+a.tag {
+  border-color: var(--color-ink-soft);
+  color: var(--color-ink);
+}
+
 a.tag:hover {
   color: var(--color-ink);
-  border-color: var(--color-ink-soft);
+  border-color: var(--color-ink);
   cursor: pointer;
 }
 
