@@ -890,6 +890,7 @@ body.has-modal-open {
 
 .slider__track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 1.25rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
