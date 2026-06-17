@@ -1,6 +1,45 @@
 (function () {
   "use strict";
 
+  // Photo lightbox
+  var photoModal = document.getElementById("photo-modal");
+  if (photoModal) {
+    var photoModalImg = photoModal.querySelector(".photo-modal__img");
+
+    function openPhoto(src, alt) {
+      photoModalImg.src = src;
+      photoModalImg.alt = alt || "";
+      photoModal.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePhoto() {
+      photoModal.setAttribute("hidden", "");
+      photoModalImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".fashion-photo").forEach(function (img) {
+      img.addEventListener("click", function () {
+        openPhoto(img.currentSrc || img.src, img.alt);
+      });
+    });
+
+    photoModal.addEventListener("click", function (e) {
+      if (e.target.closest("[data-photo-dismiss]")) {
+        closePhoto();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !photoModal.hasAttribute("hidden")) {
+        closePhoto();
+      }
+    });
+  }
+
+
+
   document.querySelectorAll("[data-slider]").forEach(function (slider) {
     var track = slider.querySelector(".slider__track");
     var prevBtn = slider.querySelector(".slider__btn--prev");

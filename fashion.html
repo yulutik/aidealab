@@ -175,6 +175,19 @@
     </div>
   </footer>
 
+  <!-- Photo lightbox -->
+  <div class="photo-modal" id="photo-modal" hidden>
+    <div class="photo-modal__backdrop" data-photo-dismiss></div>
+    <div class="photo-modal__dialog" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+      <button type="button" class="photo-modal__close" data-photo-dismiss aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 5 19 19M19 5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <img class="photo-modal__img" src="" alt="">
+    </div>
+  </div>
+
   <!-- Portfolio video modal -->
   <div class="video-modal" id="video-modal" hidden>
     <div class="video-modal__backdrop" data-modal-dismiss></div>
