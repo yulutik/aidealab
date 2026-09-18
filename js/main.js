@@ -37,6 +37,7 @@
       "fashion.photoOverline": "Фотосет",
       "fashion.video1Aria": "Открыть видео Rick Owens",
       "fashion.video2Aria": "Открыть видео Fashion",
+      "fashion.video3Aria": "Открыть видео Vivaia",
       "fashion.prevSlide": "Предыдущий",
       "fashion.nextSlide": "Следующий",
 
@@ -81,6 +82,7 @@
       "fashion.photoOverline": "Photo set",
       "fashion.video1Aria": "Open Rick Owens video",
       "fashion.video2Aria": "Open Fashion video",
+      "fashion.video3Aria": "Open Vivaia video",
       "fashion.prevSlide": "Previous",
       "fashion.nextSlide": "Next",
 
