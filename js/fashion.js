@@ -124,6 +124,7 @@
     var track = slider.querySelector(".slider__track");
     var prevBtn = slider.querySelector(".slider__btn--prev");
     var nextBtn = slider.querySelector(".slider__btn--next");
+    var hintBtn = slider.querySelector("[data-slider-hint]");
 
     if (!track) {
       return;
@@ -139,11 +140,14 @@
     };
 
     var updateButtons = function () {
-      if (!prevBtn || !nextBtn) {
-        return;
+      var atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+      if (prevBtn && nextBtn) {
+        prevBtn.disabled = track.scrollLeft <= 1;
+        nextBtn.disabled = atEnd;
       }
-      prevBtn.disabled = track.scrollLeft <= 1;
-      nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+      if (hintBtn) {
+        hintBtn.hidden = atEnd;
+      }
     };
 
     if (prevBtn) {
@@ -154,6 +158,12 @@
 
     if (nextBtn) {
       nextBtn.addEventListener("click", function () {
+        track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+      });
+    }
+
+    if (hintBtn) {
+      hintBtn.addEventListener("click", function () {
         track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
       });
     }

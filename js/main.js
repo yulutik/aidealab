@@ -42,6 +42,7 @@
       "fashion.nextSlide": "Следующий",
       "fashion.openAlbum": "Открыть",
       "fashion.openAlbumAria": "Открыть фотоальбом",
+      "fashion.moreHint": "Ещё",
 
       "cta.heading": "Расскажите о своей идее",
       "cta.button": "Обсудить проект",
@@ -89,6 +90,7 @@
       "fashion.nextSlide": "Next",
       "fashion.openAlbum": "Open",
       "fashion.openAlbumAria": "Open photo album",
+      "fashion.moreHint": "More",
 
       "cta.heading": "Tell me about your idea",
       "cta.button": "Let's talk",
