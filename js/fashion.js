@@ -1,28 +1,50 @@
 (function () {
   "use strict";
 
-  // Photo lightbox
+  // Album modal: full-size carousel with its own prev/next, opened from a photo project below
   var photoModal = document.getElementById("photo-modal");
+  var openAlbum = function () {};
+
   if (photoModal) {
     var photoModalImg = photoModal.querySelector(".photo-modal__img");
+    var photoPrevBtn = photoModal.querySelector("[data-photo-prev]");
+    var photoNextBtn = photoModal.querySelector("[data-photo-next]");
+    var albumPhotos = [];
+    var albumIndex = 0;
 
-    function openPhoto(src, alt) {
-      photoModalImg.src = src;
-      photoModalImg.alt = alt || "";
-      photoModal.removeAttribute("hidden");
-      document.body.style.overflow = "hidden";
-    }
+    var renderAlbum = function () {
+      photoModalImg.src = albumPhotos[albumIndex];
+      photoModalImg.alt = "";
+      photoPrevBtn.disabled = albumIndex <= 0;
+      photoNextBtn.disabled = albumIndex >= albumPhotos.length - 1;
+    };
 
-    function closePhoto() {
+    var closePhoto = function () {
       photoModal.setAttribute("hidden", "");
       photoModalImg.src = "";
       document.body.style.overflow = "";
-    }
+    };
 
-    document.querySelectorAll(".fashion-photo").forEach(function (img) {
-      img.addEventListener("click", function () {
-        openPhoto(img.currentSrc || img.src, img.alt);
-      });
+    openAlbum = function (photos, startIndex) {
+      albumPhotos = photos;
+      albumIndex = startIndex || 0;
+      renderAlbum();
+      photoModal.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+    };
+
+    photoPrevBtn.addEventListener("click", function () {
+      if (albumIndex > 0) {
+        albumIndex -= 1;
+        renderAlbum();
+      }
+    });
+
+    photoNextBtn.addEventListener("click", function () {
+      if (albumIndex < albumPhotos.length - 1) {
+        albumIndex += 1;
+        renderAlbum();
+      }
     });
 
     photoModal.addEventListener("click", function (e) {
@@ -32,13 +54,71 @@
     });
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !photoModal.hasAttribute("hidden")) {
-        closePhoto();
+      if (!photoModal.hasAttribute("hidden")) {
+        if (e.key === "Escape") {
+          closePhoto();
+        } else if (e.key === "ArrowLeft" && albumIndex > 0) {
+          albumIndex -= 1;
+          renderAlbum();
+        } else if (e.key === "ArrowRight" && albumIndex < albumPhotos.length - 1) {
+          albumIndex += 1;
+          renderAlbum();
+        }
       }
     });
   }
 
+  // Photo projects: one mini-carousel per album; the frame ("Открыть" on mobile) opens the album modal above
+  document.querySelectorAll(".photo-project").forEach(function (project) {
+    var photos = (project.getAttribute("data-photos") || "")
+      .split(",")
+      .filter(Boolean)
+      .map(function (n) {
+        return "assets/images/fashion-photo-" + n.trim() + ".jpg";
+      });
 
+    var img = project.querySelector(".photo-project__img");
+    var frame = project.querySelector(".photo-project__frame");
+    var prevBtn = project.querySelector("[data-project-prev]");
+    var nextBtn = project.querySelector("[data-project-next]");
+    var index = 0;
+
+    var render = function () {
+      img.src = photos[index];
+      if (prevBtn) {
+        prevBtn.disabled = index <= 0;
+      }
+      if (nextBtn) {
+        nextBtn.disabled = index >= photos.length - 1;
+      }
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        if (index > 0) {
+          index -= 1;
+          render();
+        }
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        if (index < photos.length - 1) {
+          index += 1;
+          render();
+        }
+      });
+    }
+
+    if (frame) {
+      frame.addEventListener("click", function () {
+        openAlbum(photos, index);
+      });
+    }
+
+    render();
+  });
 
   document.querySelectorAll("[data-slider]").forEach(function (slider) {
     var track = slider.querySelector(".slider__track");

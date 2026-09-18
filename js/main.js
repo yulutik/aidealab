@@ -40,6 +40,8 @@
       "fashion.video3Aria": "Открыть видео Vivaia",
       "fashion.prevSlide": "Предыдущий",
       "fashion.nextSlide": "Следующий",
+      "fashion.openAlbum": "Открыть",
+      "fashion.openAlbumAria": "Открыть фотоальбом",
 
       "cta.heading": "Расскажите о своей идее",
       "cta.button": "Обсудить проект",
@@ -85,6 +87,8 @@
       "fashion.video3Aria": "Open Vivaia video",
       "fashion.prevSlide": "Previous",
       "fashion.nextSlide": "Next",
+      "fashion.openAlbum": "Open",
+      "fashion.openAlbumAria": "Open photo album",
 
       "cta.heading": "Tell me about your idea",
       "cta.button": "Let's talk",
