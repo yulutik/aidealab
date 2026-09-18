@@ -978,27 +978,23 @@ body.has-modal-open {
   cursor: default;
 }
 
-/* Mobile-only "swipe hint" — the desktop .slider__nav arrows take over at 900px */
+/* Mobile-only "swipe hint" — a plain caption below the row, not attached to any
+   single item (nothing here belongs to one photo the way the album "Открыть" does);
+   the desktop .slider__nav arrows take over at 900px */
 .slider__hint {
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.4rem 0.65rem;
-  border: 1px solid var(--color-line);
-  border-radius: 999px;
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  gap: 0.25rem;
+  width: fit-content;
+  margin: 0.6rem 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-ink-soft);
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.10);
-  transition: opacity var(--transition);
 }
 
 .slider__hint[hidden] {
