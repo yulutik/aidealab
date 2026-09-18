@@ -1,32 +1,62 @@
 (function () {
   "use strict";
 
-  // Album modal: full-size carousel with its own prev/next, opened from a photo project below
+  var isMobileViewport = function () {
+    return window.matchMedia("(max-width: 899px)").matches;
+  };
+
+  // Album modal: full-size carousel with its own prev/next, opened from a photo project below.
+  // Slides can be images or a video (played inline with native controls).
   var photoModal = document.getElementById("photo-modal");
   var openAlbum = function () {};
 
   if (photoModal) {
     var photoModalImg = photoModal.querySelector(".photo-modal__img");
+    var photoModalVideo = photoModal.querySelector(".photo-modal__video");
     var photoPrevBtn = photoModal.querySelector("[data-photo-prev]");
     var photoNextBtn = photoModal.querySelector("[data-photo-next]");
-    var albumPhotos = [];
+    var albumSlides = [];
     var albumIndex = 0;
 
     var renderAlbum = function () {
-      photoModalImg.src = albumPhotos[albumIndex];
-      photoModalImg.alt = "";
+      var slide = albumSlides[albumIndex];
+
+      photoModalVideo.pause();
+      photoModalVideo.removeAttribute("src");
+      photoModalVideo.load();
+
+      if (slide.type === "video") {
+        photoModalImg.hidden = true;
+        photoModalImg.src = "";
+        photoModalVideo.hidden = false;
+        photoModalVideo.poster = slide.poster || "";
+        photoModalVideo.src = (isMobileViewport() && slide.mobileSrc) ? slide.mobileSrc : slide.src;
+        photoModalVideo.load();
+        photoModalVideo.play().catch(function () {
+          /* autoplay may be blocked — user can press play in the controls */
+        });
+      } else {
+        photoModalVideo.hidden = true;
+        photoModalImg.hidden = false;
+        photoModalImg.src = slide.src;
+        photoModalImg.alt = "";
+      }
+
       photoPrevBtn.disabled = albumIndex <= 0;
-      photoNextBtn.disabled = albumIndex >= albumPhotos.length - 1;
+      photoNextBtn.disabled = albumIndex >= albumSlides.length - 1;
     };
 
     var closePhoto = function () {
       photoModal.setAttribute("hidden", "");
       photoModalImg.src = "";
+      photoModalVideo.pause();
+      photoModalVideo.removeAttribute("src");
+      photoModalVideo.load();
       document.body.style.overflow = "";
     };
 
-    openAlbum = function (photos, startIndex) {
-      albumPhotos = photos;
+    openAlbum = function (slides, startIndex) {
+      albumSlides = slides;
       albumIndex = startIndex || 0;
       renderAlbum();
       photoModal.removeAttribute("hidden");
@@ -41,7 +71,7 @@
     });
 
     photoNextBtn.addEventListener("click", function () {
-      if (albumIndex < albumPhotos.length - 1) {
+      if (albumIndex < albumSlides.length - 1) {
         albumIndex += 1;
         renderAlbum();
       }
@@ -60,7 +90,7 @@
         } else if (e.key === "ArrowLeft" && albumIndex > 0) {
           albumIndex -= 1;
           renderAlbum();
-        } else if (e.key === "ArrowRight" && albumIndex < albumPhotos.length - 1) {
+        } else if (e.key === "ArrowRight" && albumIndex < albumSlides.length - 1) {
           albumIndex += 1;
           renderAlbum();
         }
@@ -70,26 +100,41 @@
 
   // Photo projects: one mini-carousel per album; the frame ("Открыть" on mobile) opens the album modal above
   document.querySelectorAll(".photo-project").forEach(function (project) {
-    var photos = (project.getAttribute("data-photos") || "")
+    var slides = (project.getAttribute("data-photos") || "")
       .split(",")
       .filter(Boolean)
       .map(function (n) {
-        return "assets/images/fashion-photo-" + n.trim() + ".jpg";
+        return { type: "image", src: "assets/images/fashion-photo-" + n.trim() + ".jpg" };
       });
 
+    var videoSrc = project.getAttribute("data-video-src");
+    if (videoSrc) {
+      slides.push({
+        type: "video",
+        src: videoSrc,
+        mobileSrc: project.getAttribute("data-video-src-mobile") || videoSrc,
+        poster: project.getAttribute("data-video-poster") || ""
+      });
+    }
+
     var img = project.querySelector(".photo-project__img");
+    var playIcon = project.querySelector(".photo-project__play");
     var frame = project.querySelector(".photo-project__frame");
     var prevBtn = project.querySelector("[data-project-prev]");
     var nextBtn = project.querySelector("[data-project-next]");
     var index = 0;
 
     var render = function () {
-      img.src = photos[index];
+      var slide = slides[index];
+      img.src = slide.type === "video" ? slide.poster : slide.src;
+      if (playIcon) {
+        playIcon.hidden = slide.type !== "video";
+      }
       if (prevBtn) {
         prevBtn.disabled = index <= 0;
       }
       if (nextBtn) {
-        nextBtn.disabled = index >= photos.length - 1;
+        nextBtn.disabled = index >= slides.length - 1;
       }
     };
 
@@ -104,7 +149,7 @@
 
     if (nextBtn) {
       nextBtn.addEventListener("click", function () {
-        if (index < photos.length - 1) {
+        if (index < slides.length - 1) {
           index += 1;
           render();
         }
@@ -113,7 +158,7 @@
 
     if (frame) {
       frame.addEventListener("click", function () {
-        openAlbum(photos, index);
+        openAlbum(slides, index);
       });
     }
 

@@ -1052,6 +1052,21 @@ body.has-modal-open {
   border-radius: 0.5rem;
 }
 
+/* Shown instead of the poster when the current slide is a video */
+.photo-project__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  pointer-events: none;
+}
+
+.photo-project__play[hidden] {
+  display: none;
+}
+
 /* Mobile: cover photo + "Открыть" overlay opens the album modal */
 .photo-project__open {
   position: absolute;
@@ -1116,7 +1131,8 @@ body.has-modal-open {
   line-height: 0;
 }
 
-.photo-modal__img {
+.photo-modal__img,
+.photo-modal__video {
   display: block;
   max-width: min(90vw, 900px);
   max-height: 90vh;
@@ -1124,6 +1140,11 @@ body.has-modal-open {
   height: auto;
   border-radius: 0.5rem;
   object-fit: contain;
+}
+
+.photo-modal__img[hidden],
+.photo-modal__video[hidden] {
+  display: none;
 }
 
 .photo-modal__close {
