@@ -44,6 +44,9 @@
       "fashion.openAlbumAria": "Открыть фотоальбом",
       "fashion.moreHint": "Ещё",
 
+      "beauty.videoOverline": "Видео",
+      "beauty.video1Aria": "Открыть видео Beauty",
+
       "cta.heading": "Расскажите о своей идее",
       "cta.button": "Обсудить проект",
 
@@ -92,6 +95,9 @@
       "fashion.openAlbumAria": "Open photo album",
       "fashion.moreHint": "More",
 
+      "beauty.videoOverline": "Video",
+      "beauty.video1Aria": "Open Beauty video",
+
       "cta.heading": "Tell me about your idea",
       "cta.button": "Let's talk",
 
@@ -105,11 +111,13 @@
   var titles = {
     ru: {
       main: "aidea lab — AI Video Creator | Юлия Колесникова",
-      fashion: "Fashion — aidea lab | Юлия Колесникова"
+      fashion: "Fashion — aidea lab | Юлия Колесникова",
+      beauty: "Beauty — aidea lab | Юлия Колесникова"
     },
     en: {
       main: "aidea lab — AI Video Creator | Yulia Kolesnikova",
-      fashion: "Fashion — aidea lab | Yulia Kolesnikova"
+      fashion: "Fashion — aidea lab | Yulia Kolesnikova",
+      beauty: "Beauty — aidea lab | Yulia Kolesnikova"
     }
   };
 
