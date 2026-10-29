@@ -132,6 +132,23 @@ button:focus-visible {
   margin: 0 0 1rem;
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 1.25rem;
+  color: var(--color-ink-soft);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.back-link:hover {
+  color: var(--color-ink);
+}
+
 .section-heading {
   font-family: var(--font-serif);
   font-weight: 600;

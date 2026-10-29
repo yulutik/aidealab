@@ -9,6 +9,7 @@
       "nav.about": "Обо мне",
       "nav.portfolio": "Портфолио",
       "nav.contact": "Контакты",
+      "nav.back": "Назад",
 
       "hero.overline": "AI VIDEO CREATOR",
       "hero.firstName": "Юлия",
@@ -60,6 +61,7 @@
       "nav.about": "About",
       "nav.portfolio": "Portfolio",
       "nav.contact": "Contact",
+      "nav.back": "Back",
 
       "hero.overline": "AI VIDEO CREATOR",
       "hero.firstName": "Yulia",
