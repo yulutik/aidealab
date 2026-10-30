@@ -920,6 +920,11 @@ body.has-modal-open {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-bottom: 0.25rem;
+  /* Tell touch gesture recognizers this element only scrolls horizontally,
+     so a vertical swipe that starts over it still scrolls the page instead
+     of getting swallowed — some in-app browsers (Telegram, Instagram) mishandle
+     this without the hint and the page can feel "stuck" past this point. */
+  touch-action: pan-x;
 }
 
 .slider__track::-webkit-scrollbar {
