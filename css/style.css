@@ -453,6 +453,19 @@ button:focus-visible {
   padding-block: var(--space-section);
 }
 
+/* Моб: разрывы между блоками чуть меньше общего --space-section (4rem).
+   scroll-margin-top — запас под липкую шапку (~91px) при переходе по
+   якорю (#about, #portfolio, «Назад» с Fashion/Beauty). */
+@media (max-width: 899px) {
+  .about {
+    padding-block: 3rem;
+  }
+  .about,
+  .portfolio {
+    scroll-margin-top: 5rem;
+  }
+}
+
 /* Десктоп: компактнее общего --space-section (4–8rem) — блок «Обо мне»
    стал короче, большие отступы выглядели пустыми. Моб — как было.
    scroll-margin-top — чтобы при переходе по якорю (#about, #portfolio,
@@ -524,6 +537,12 @@ button:focus-visible {
 @media (min-width: 900px) {
   .portfolio {
     padding-top: clamp(2rem, 3vw, 3rem); /* десктоп: стык с «Обо мне» без пустой дыры */
+  }
+}
+
+@media (max-width: 899px) {
+  .portfolio {
+    padding-top: 2.5rem; /* моб: стык с «Обо мне» чуть плотнее */
   }
 }
 
