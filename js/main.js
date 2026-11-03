@@ -19,9 +19,8 @@
       "hero.portraitAlt": "Портрет Юлии Колесниковой",
 
       "about.overline": "Обо мне",
-      "about.heading": "Взгляд фотографа сквозь призму AI",
-      "about.p1": "Больше десяти лет я работаю с фотографией — женские портреты и творческие проекты в светлой, воздушной эстетике. За это время я научилась чувствовать свет, кадр и настроение, а вместе с этим — насмотренность, которая сегодня помогает быстро находить нужный визуальный язык.",
-      "about.p2": "Сейчас я применяю этот опыт в AI-видео.",
+      "about.heading": "AI умеет генерировать. Я умею снимать",
+      "about.p1": "За плечами 10 лет в фотографии и режиссура AI-видео. Я вижу кадр как фотограф, выстраиваю историю как режиссёр и собираю её на актуальных AI-инструментах. На выходе визуал, который выглядит как продуманная реальная съёмка, только без её ограничений.",
 
       "portfolio.overline": "Видео",
       "portfolio.heading": "Портфолио",
@@ -70,9 +69,8 @@
       "hero.portraitAlt": "Portrait of Yulia Kolesnikova",
 
       "about.overline": "About",
-      "about.heading": "A photographer's eye through AI",
-      "about.p1": "For over ten years I've worked in photography — women's portraits and creative projects in a light, airy aesthetic. Along the way I learned to feel light, frame and mood, building the visual fluency that now helps me quickly find the right visual language.",
-      "about.p2": "Now I bring that experience into AI video.",
+      "about.heading": "AI can generate. I know how to shoot",
+      "about.p1": "10 years in photography and AI video direction. I see the frame as a photographer, build the story as a director and bring it to life with today's AI tools. The result is visuals that look like a carefully planned real shoot, only without its limitations.",
 
       "portfolio.overline": "Video",
       "portfolio.heading": "Portfolio",
