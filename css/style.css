@@ -359,6 +359,23 @@ button:focus-visible {
   color: var(--color-ink);
 }
 
+/* Моб: первая строка — ровно «Создаю концепты и AI креативы»,
+   остальной текст переносится по её ширине (contain: inline-size
+   не даёт второй части влиять на ширину блока). */
+@media (max-width: 899px) {
+  .hero__tagline {
+    max-width: none;
+    width: fit-content;
+  }
+  .hero__tagline-lead,
+  .hero__tagline-rest {
+    display: block;
+  }
+  .hero__tagline-rest {
+    contain: inline-size;
+  }
+}
+
 .hero__subtitle {
   font-size: clamp(0.875rem, 3.5vw, 1.0625rem);
   color: var(--color-ink-soft);
