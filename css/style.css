@@ -163,10 +163,11 @@ button:focus-visible {
    «генерировать.»; шрифт ужимается ровно настолько, чтобы первая
    строка влезла в ширину экрана (≈12.6em при 28px, берём с запасом),
    но не больше обычных 28px. */
+.about__heading-line {
+  display: block; /* заголовок «Обо мне» всегда в две строки */
+}
+
 @media (max-width: 899px) {
-  .about__heading-line {
-    display: block;
-  }
   .section-heading {
     font-size: min(clamp(1.75rem, 3.5vw, 2.5rem), calc((100vw - 3rem) / 13));
   }
