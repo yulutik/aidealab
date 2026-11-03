@@ -716,6 +716,12 @@ a.tag:hover {
   padding-block: clamp(3.5rem, 8vw, 6rem);
 }
 
+@media (min-width: 900px) {
+  .cta-strip {
+    padding-block: clamp(2.5rem, 4.5vw, 4rem); /* десктоп: полоса пониже */
+  }
+}
+
 .cta-strip__inner {
   display: flex;
   flex-direction: column;
