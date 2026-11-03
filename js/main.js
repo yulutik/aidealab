@@ -20,7 +20,8 @@
       "hero.portraitAlt": "Портрет Юлии Колесниковой",
 
       "about.overline": "Обо мне",
-      "about.heading": "AI умеет генерировать. Я умею снимать",
+      "about.headingLine1": "AI умеет генерировать.",
+      "about.headingLine2": "Я умею снимать",
       "about.p1": "За плечами 10 лет в фотографии и режиссура AI-видео. Я вижу кадр как фотограф, выстраиваю историю как режиссёр и собираю её на актуальных AI-инструментах. На выходе визуал, который выглядит как продуманная реальная съёмка, только без её ограничений.",
 
       "portfolio.overline": "Видео",
@@ -71,7 +72,8 @@
       "hero.portraitAlt": "Portrait of Yulia Kolesnikova",
 
       "about.overline": "About",
-      "about.heading": "AI can generate. I know how to shoot",
+      "about.headingLine1": "AI can generate.",
+      "about.headingLine2": "I know how to shoot",
       "about.p1": "10 years in photography and AI video direction. I see the frame as a photographer, build the story as a director and bring it to life with today's AI tools. The result is visuals that look like a carefully planned real shoot, only without its limitations.",
 
       "portfolio.overline": "Video",
