@@ -11,7 +11,7 @@
       "nav.contact": "Контакты",
       "nav.back": "Назад",
 
-      "hero.overline": "AI VIDEO CREATOR",
+      "hero.overline": "AI FASHION ART DIRECTOR",
       "hero.firstName": "Юлия",
       "hero.lastName": "Колесникова",
       "hero.tagline": "Концепты и креативы под ДНК вашего бренда",
@@ -63,7 +63,7 @@
       "nav.contact": "Contact",
       "nav.back": "Back",
 
-      "hero.overline": "AI VIDEO CREATOR",
+      "hero.overline": "AI FASHION ART DIRECTOR",
       "hero.firstName": "Yulia",
       "hero.lastName": "Kolesnikova",
       "hero.tagline": "Concepts and creatives shaped by your brand's DNA",
