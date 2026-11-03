@@ -424,6 +424,16 @@ button:focus-visible {
 
   .hero__content {
     grid-area: content;
+    width: fit-content;
+  }
+
+  /* Десктоп: подпись под именем растягивается ровно на ширину имени
+     (до последней «А» в «КОЛЕСНИКОВА»); contain: inline-size не даёт
+     самой подписи раздвигать колонку. */
+  .hero__tagline {
+    max-width: none;
+    align-self: stretch;
+    contain: inline-size;
   }
 
   .hero__media {
