@@ -460,6 +460,7 @@ button:focus-visible {
 @media (min-width: 900px) {
   .about {
     padding-block: clamp(3rem, 5vw, 5rem);
+    padding-top: clamp(1rem, 2vw, 1.5rem); /* ближе к hero */
   }
   .about,
   .portfolio {
