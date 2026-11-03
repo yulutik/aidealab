@@ -450,7 +450,17 @@ button:focus-visible {
    About
    --------------------------------------------------------- */
 .about {
-  padding-block: var(--space-section);
+  /* компактнее общего --space-section (было 4–8rem): блок «Обо мне»
+     стал короче, большие отступы выглядели пустыми */
+  padding-block: clamp(3rem, 5vw, 5rem);
+}
+
+/* Отступы секций уменьшены — чтобы при переходе по якорю (#about,
+   #portfolio, «Назад» с Fashion/Beauty) подпись не пряталась под
+   липкой шапкой, оставляем запас сверху. */
+.about,
+.portfolio {
+  scroll-margin-top: 6rem;
 }
 
 .about__content {
@@ -504,6 +514,7 @@ button:focus-visible {
    --------------------------------------------------------- */
 .portfolio {
   padding-block: var(--space-section);
+  padding-top: clamp(2rem, 3vw, 3rem); /* стык с «Обо мне» без пустой дыры */
 }
 
 .portfolio__header {
