@@ -159,7 +159,7 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-/* Моб: заголовок «Обо мне» — две строки, перенос после
+/* Моб: заголовок «Обо мне» (и «Портфолио» — тем же размером) — две строки, перенос после
    «генерировать.»; шрифт ужимается ровно настолько, чтобы первая
    строка влезла в ширину экрана (≈12.6em при 28px, берём с запасом),
    но не больше обычных 28px. */
@@ -167,7 +167,8 @@ button:focus-visible {
   .about__heading-line {
     display: block;
   }
-  .about__heading {
+  .about__heading,
+  .portfolio__header .section-heading {
     font-size: min(clamp(1.75rem, 3.5vw, 2.5rem), calc((100vw - 3rem) / 13));
   }
 }
