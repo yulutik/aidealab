@@ -353,7 +353,6 @@ button:focus-visible {
 
 .hero__tagline {
   font-family: var(--font-serif);
-  font-style: italic;
   font-size: clamp(1.125rem, 4vw, 1.875rem);
   line-height: 1.35;
   max-width: 24ch;

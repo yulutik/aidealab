@@ -14,8 +14,7 @@
       "hero.overline": "AI FASHION ART DIRECTOR",
       "hero.firstName": "Юлия",
       "hero.lastName": "Колесникова",
-      "hero.tagline": "Концепты и креативы под ДНК вашего бренда",
-      "hero.subtitle": "Создаю атмосферные AI-видео для fashion и luxury — от идеи до продакшена",
+      "hero.tagline": "Создаю концепты и AI креативы под ДНК вашего бренда для fashion и beauty: от идеи до постпродакшена",
       "hero.cta": "Обсудить проект",
       "hero.portraitAlt": "Портрет Юлии Колесниковой",
 
@@ -66,8 +65,7 @@
       "hero.overline": "AI FASHION ART DIRECTOR",
       "hero.firstName": "Yulia",
       "hero.lastName": "Kolesnikova",
-      "hero.tagline": "Concepts and creatives shaped by your brand's DNA",
-      "hero.subtitle": "I create atmospheric AI video for fashion and luxury — from idea to final production.",
+      "hero.tagline": "I create concepts and AI creatives shaped by your brand's DNA for fashion and beauty: from idea to post-production",
       "hero.cta": "Let's talk",
       "hero.portraitAlt": "Portrait of Yulia Kolesnikova",
 
